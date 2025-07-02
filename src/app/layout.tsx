@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 
 import type { Metadata } from "next";
@@ -22,11 +23,15 @@ type RootLayoutProps = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <ClerkProvider>
+        <body className={inter.className}>
+          <header>
+            <Navbar />
+          </header>
+          {children}
+          <Footer />
+        </body>
+      </ClerkProvider>
     </html>
   );
 };

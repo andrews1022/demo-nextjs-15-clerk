@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer>GitHub Gists Clone</footer>;
+  return <footer>Clerk Demo</footer>;
 };
 
 export { Footer };
